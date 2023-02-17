@@ -67,20 +67,12 @@ def start(message: str, res=False) -> str:
 @bot.message_handler(content_types=["text"])
 def handle_text(message: str) -> str:
 
-        if (message.text != PASSWORD):
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            bot.send_message(message.chat.id, text="ДОСТУП ЗАПРЕЩЕН", reply_markup=markup)
-        else:
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            bot.send_message(message.chat.id, text="Начните поиск", reply_markup=markup)
-            
-            @bot.message_handler(content_types=["text"])
-            def handle_text(message: str) -> str:
+        
                 markup = types.ReplyKeyboardMarkup(resize_keyboard=True) 
                 name = message.text
                 ### nemezida
                 
-                url = f"https://nemez1da.ru/?s={name}"
+                url = f"https://nemez1da.ru/page/1/?s={name}"
                 
                 response = requests.get(url, allow_redirects = True,headers={
                 "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
@@ -101,7 +93,7 @@ def handle_text(message: str) -> str:
                 
                 
                     
-                url = f"https://nemez1da.ru/?s={name}"
+                url = f"https://nemez1da.ru/page/1/?s={name}"
                 
                 response = requests.get(url, allow_redirects = True,headers={
                 "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
